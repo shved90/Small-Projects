@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Sample</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main>
+
+    <section id="peopleList" class="peopleList">
+      <article class="peopleList__person">
+        <h3 class="person__name"></h3>
+        <p class="person__gender"></p>
+        <a class="person__email" href=""></a>
+        <button class="loadFriends">View friends</button>
+        <div class="person__friendList">
+          <div class="friendList__friend">
+            <img class="friend__avatar" src="" />
+            <h4 class="friend__name"></h4>
+            <a class="friend__email" href=""></a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <aside id="friendView">
+      <div class="friendList__friend">
+        <img class="friend__avatar" src="" />
+        <h4 class="friend__name"></h4>
+        <a class="friend__email" href=""></a>
+      </div>
+    </aside>
+
+    <button id="loadMore">Load More</button>
+
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>

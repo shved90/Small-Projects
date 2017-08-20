@@ -1,0 +1,193 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700,400);
+
+form *{
+	box-sizing: border-box;
+	transition: all 0.3s ease;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: Open Sans;
+}
+
+header{
+    background-color: #44c493;
+    color: #fff;
+    text-align: center;
+}
+
+header h3{
+	margin: 0;
+	padding: 20px 0;
+}
+
+main{
+	margin-top: 70px;
+	text-align: center;
+}
+
+h1{
+	display: inline-block;
+	padding-bottom: 10px;
+	margin-bottom: 50px;
+	border-bottom: 3px solid #44c493;
+}
+
+form fieldset{
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+form div{
+	width: 330px;
+	margin: 0 auto 25px;
+	position: relative;
+}
+
+form fieldset div input{
+	width: 100%;
+	border: 2px solid #d1d1d1;
+	padding: 15px 40px 15px 15px;
+	border-radius: 2px;
+	outline: none;
+}
+
+form fieldset label{
+	position: absolute;
+	top: 13px;
+	left: 15px;
+	color: #d1d1d1;
+	width: 300px;
+	text-align: left;
+}
+
+form fieldset div input:focus{
+	border-color: #44c493;
+}
+
+form fieldset div input:focus + label,
+form fieldset div input:valid + label{
+	left: -100px;
+	color: #000;
+}
+
+form fieldset div input:focus + label::before,
+form fieldset div input:valid + label::before{
+	left: auto;
+	right: -115px;
+}
+
+form fieldset div label::before{
+	content: "";
+	display: block;
+	position: absolute;
+	right: 0;
+	left: auto;
+	background: url(sprite-sheet.jpg) no-repeat 0 0;
+	width: 21px;
+	height: 23px;
+}
+
+form fieldset div label[for=email]::before{
+	background-position: 0 -23px;
+	width: 23px;
+	height: 24px;
+}
+
+form fieldset div label[for=password]::before{
+	background-position: 0 -49px;
+	height: 25px;
+}
+
+form fieldset div input:focus + label[for=username]::before,
+form fieldset div input:valid + label[for=username]::before{
+	background-position: -21px 0;
+}
+
+form fieldset div input:focus + label[for=email]::before,
+form fieldset div input:valid + label[for=email]::before{
+	background-position: -24px -23px;
+}
+
+form fieldset div input:focus + label[for=password]::before,
+form fieldset div input:valid + label[for=password]::before{
+	background-position: -21px -49px;
+}
+
+form fieldset label::after{
+	content: attr(data-attribute);
+	opacity: 0;
+	top: -13px;
+	left: auto;
+	right: -200px;
+	position: absolute;
+	width: 250px;
+}
+
+form fieldset div input:focus + label::after{
+	opacity: 1;
+	right: -400px;
+}
+form fieldset div input:valid + label::after{
+	display: none;
+}
+
+#password-details{
+	width: 330px;
+	display: none;
+	text-align: left;
+}
+
+#password-details p{
+	margin: 0;
+}
+
+#password-details input{
+	margin-left: 40px;
+}
+
+#password-details p, #password-details input, #password-details label{
+	display: inline-block;
+}
+
+#password-details p span{
+	color: #d10000;
+}
+
+form input[type=submit]{
+	background-color: #44C493;
+	border-radius: 5px;
+	border: 1px solid #44C493;
+	width: 330px;
+	padding: 10px;
+	color: #fff;
+	font-size: 25px;
+}
+
+form > p{
+	font-size: 12px;
+	color: #b0b0b0;
+}
+
+form > p a{
+	color: #565656;
+}
+
+@media all and (max-width: 400px){
+	form fieldset div input:focus + label,
+	form fieldset div input:valid + label{
+		left: 15px;
+		top: -19px;
+	}
+	form fieldset div input + label::after{
+		display: none;
+	}
+	form fieldset div input:focus + label::before,
+	form fieldset div input:valid + label::before{
+		left: auto;
+		top: 10px;
+		right: 0;
+	}
+}

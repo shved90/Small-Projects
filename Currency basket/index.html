@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<title>Currency shopping basket</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" /> -->
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="">
+	<meta name="twitter:url" property="og:url" content="">
+	<meta name="twitter:title" property="og:title" content="">
+	<meta name="twitter:description" property="og:description" content="">
+	<meta name="twitter:image:src" property="og:image" content="">
+	<meta property="og:site_name" content="" />
+	<meta property="og:type" content="website" />
+
+	<link href="style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+<main>
+	<div class="topBar">
+		<ul class="currencyList" id="currency">
+			<!-- having an image in place of text breaks currency click detection -->
+			<!-- 
+			<li class="currencyList__item" id="USD"><img class="image" src="http://www.currency.me.uk/images/flags/128/us.png" /></li>
+			<li class="currencyList__item" id="GBP"><img class="image" src="http://www.currency.me.uk/images/flags/128/gb.png" /></li>
+			<li class="currencyList__item" id="EUR"><img class="image" src="http://www.currency.me.uk/images/flags/128/europeanunion.png" /></li>
+			<li class="currencyList__item" id="RUB"><img class="image" src="http://www.currency.me.uk/images/flags/128/ru.png" /></li>
+			-->
+			<li class="currencyList__item" id="USD">Dollars</li>
+			<li class="currencyList__item" id="GBP">Pounds</li>
+			<li class="currencyList__item" id="EUR">Euro</li>
+			<li class="currencyList__item" id="RUB">Roubles</li>
+		</ul>
+	</div>
+	
+	<div class="wrapper">
+		<aside class="sidebar">
+			<div id="basket">
+				<h3>Shopping basket</h3>
+				<ul class="itemList itemList--row" id="basketList">
+					<li class="item" itemscope itemtype="http://schema.org/Product">
+						<div class="item__image">
+							<img class="image" src="https://cdn2.iconfinder.com/data/icons/the-greens/512/Mushroom-512.png" itemprop="image" />
+						</div>
+						<p class="item__name" itemprop="name">Mushrooms</p>
+						<p class="item__price" itemprop="price" content="1.85">$1.85</p>
+						<p class="item__quantity">
+							<span class="item__minus" data-action="basket:minus">-</span>
+							<span class="quantity">1</span>
+							<span class="item__plus" data-action="basket:plus">+</span>
+						</p>
+						<a href="" class="button" data-action="basket:add">Add to basket</a>
+						<a href="" class="button" data-action="basket:remove">Remove</a>
+					</li>
+				</ul>
+				<p class="totalPrice">Basket total: <span id="totalPrice"></span></p>
+				<a href="" class="button">Checkout</a>
+			</div>
+		</aside>
+
+		<section class="container"> <!-- http://schema.org/price -->
+			<h3>Groceries</h3>
+			<ul class="itemList itemList--column" id="shoppingList">
+				<li class="item" itemscope itemtype="http://schema.org/Product">
+					<div class="item__image">
+						<img class="image" src="https://cdn3.iconfinder.com/data/icons/foodix-circular/125/Fooodix_steak-512.png" itemprop="image" />
+					</div>
+					<p class="item__name" itemprop="name">Beef steak</p>
+					<p class="item__price" itemprop="price" content="7.50">$7.50</p>
+					<p class="item__quantity">
+						<span class="item__minus" data-action="basket:minus">-</span>
+						<span class="quantity">1</span>
+						<span class="item__plus" data-action="basket:plus">+</span>
+					</p>
+					<a href="" class="button" data-action="basket:add">Add to basket</a>
+					<a href="" class="button" data-action="basket:remove">Remove</a>
+				</li>
+				<li class="item" itemscope itemtype="http://schema.org/Product">
+					<div class="item__image">
+						<img class="image" src="https://cdn0.iconfinder.com/data/icons/food-interactive-2/128/71-512.png" itemprop="image" />
+					</div>
+					<p class="item__name" itemprop="name">Free range eggs</p>
+					<p class="item__price" itemprop="price" content="2.10">$2.10</p>
+					<p class="item__quantity">
+						<span class="item__minus" data-action="basket:minus">-</span>
+						<span class="quantity">1</span>
+						<span class="item__plus" data-action="basket:plus">+</span>
+					</p>
+					<a href="" class="button" data-action="basket:add">Add to basket</a>
+					<a href="" class="button" data-action="basket:remove">Remove</a>
+				</li>
+				<li class="item" itemscope itemtype="http://schema.org/Product">
+					<div class="item__image">
+						<img class="image" src="https://cdn2.iconfinder.com/data/icons/jetflat-vegetables/90/002_017_bean_beans_vegetable_food-512.png" itemprop="image" />
+					</div>
+					<p class="item__name" itemprop="name">Beans</p>
+					<p class="item__price" itemprop="price" content="0.73">$0.73</p>
+					<p class="item__quantity">
+						<span class="item__minus" data-action="basket:minus">-</span>
+						<span class="quantity">1</span>
+						<span class="item__plus" data-action="basket:plus">+</span>
+					</p>
+					<a href="" class="button" data-action="basket:add">Add to basket</a>
+					<a href="" class="button" data-action="basket:remove">Remove</a>
+				</li>
+				<li class="item" itemscope itemtype="http://schema.org/Product">
+					<div class="item__image">
+						<img class="image" src="https://cdn0.iconfinder.com/data/icons/food-and-drink-3/128/_Bread_Slices-512.png" itemprop="image" />
+					</div>
+					<p class="item__name" itemprop="name">Rye bread</p>
+					<p class="item__price" itemprop="price" content="1.20">$1.20</p>
+					<p class="item__quantity">
+						<span class="item__minus" data-action="basket:minus">-</span>
+						<span class="quantity">1</span>
+						<span class="item__plus" data-action="basket:plus">+</span>
+					</p>
+					<a href="" class="button" data-action="basket:add">Add to basket</a>
+					<a href="" class="button" data-action="basket:remove">Remove</a>
+				</li>
+				<li class="item" itemscope itemtype="http://schema.org/Product">
+					<div class="item__image">
+						<img class="image" src="https://cdn1.iconfinder.com/data/icons/food-2-13/128/78-512.png" itemprop="image" />
+					</div>
+					<p class="item__name" itemprop="name">Canned peas</p>
+					<p class="item__price" itemprop="price" content="0.95">$0.95</p>
+					<p class="item__quantity">
+						<span class="item__minus" data-action="basket:minus">-</span>
+						<span class="quantity">1</span>
+						<span class="item__plus" data-action="basket:plus">+</span>
+					</p>
+					<a href="" class="button" data-action="basket:add">Add to basket</a>
+					<a href="" class="button" data-action="basket:remove">Remove</a>
+				</li>
+				<li class="item" itemscope itemtype="http://schema.org/Product">
+					<div class="item__image">
+						<img class="image" src="https://cdn1.iconfinder.com/data/icons/drinkix-circular/125/drink_beverage_chocolate_milk_carton_box_dairy-512.png" itemprop="image" />
+					</div>
+					<p class="item__name" itemprop="name">Milk</p>
+					<p class="item__price" itemprop="price" content="1.30">$1.30</p>
+					<p class="item__quantity">
+						<span class="item__minus" data-action="basket:minus">-</span>
+						<span class="quantity">1</span>
+						<span class="item__plus" data-action="basket:plus">+</span>
+					</p>
+					<a href="" class="button" data-action="basket:add">Add to basket</a>
+					<a href="" class="button" data-action="basket:remove">Remove</a>
+				</li>
+			</ul>
+		</section>
+	</div>
+	
+</main>
+
+<script type="text/javascript" src="scripts.js"></script>
+
+
+</body>
+
+</html>

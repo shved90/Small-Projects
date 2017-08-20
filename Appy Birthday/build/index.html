@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Appy Birthday</title>
+    <link rel="shortcut icon" href="" />
+    <link rel="apple-touch-icon" href="" />
+
+    <!-- google search meta tags -->
+    <meta name="description" content="" />
+    <meta name="author" content="Alexander Shved" />
+    <meta name="keywords" content="appy birthday" />
+
+    <!-- facebook opengraph meta tags -->
+    <!-- twitter card meta tags -->
+
+    <link rel="stylesheet" href="styles/style.css" media="all" />
+
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <header>
+        <h1>Appy Birthday App</h1>
+        <div id="nav-toggle">
+            <span></span>
+            <nav id="main-nav">
+                <a href="" title="cv">CV</a>
+                <a href="" title="blog">Blog</a>
+                <a href="" title="contact">Contact</a>
+            </nav>
+        </div>
+        
+    </header>
+
+    <div id="banner">
+        <img src="images/banner.jpg" alt="appy birthday" /> 
+    </div>
+
+    <main>
+
+        <h2>Let's get started</h2>
+        <p>Fill out your friends details below</p>
+
+        <hr />
+
+        <form>
+            <div class="wide-60">
+                <label for="name">Your friend's name</label>
+                <input type="text" id="name" />
+            </div>
+            <div class="wide-40">
+                <label for="date">Your friend's birthday:</label>
+                <select>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <select>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                </select>
+            </div>
+            <div class="wide-100">
+                <label for="name">Your friend's name</label>
+                <textarea></textarea>
+        </form>
+
+    </main>
+
+    <footer>
+        <div>
+            <p>Copyright &copy;appybirthday</p>
+            <a href="mailto:contact@appybirthdasy.com">contact@appybirthdasy.com</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleClass(element, className) {
+            if (!element || !className) {
+                return;
+            }
+
+            var classString = element.className, nameIndex = classString.indexOf(className);
+            if (nameIndex == -1) {
+                classString += '' + className;
+            }
+            else {
+                classString = classString.substr(0, nameIndex) + classString.substr(nameIndex + className.length);
+            }
+            element.className = classString;
+        }
+
+        document.getElementById('nav-toggle').addEventListener('click', function () {
+            toggleClass(document.getElementById('main-nav'), 'open');
+        });
+    </script>
+
+</body>
+
+</html>

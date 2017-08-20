@@ -1,0 +1,225 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+
+html,body
+{
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    font-family: PT Sans;
+    color: #6e7173;
+}
+
+header
+{
+    width: 900px;
+    margin: 20px auto;
+}
+
+header h1
+{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+#nav-toggle
+{
+    display: inline-block;
+    float: right;
+    margin-top: 8px;
+    height: 20px;
+    position: relative;
+}
+
+#nav-toggle span
+{
+    margin-top: 8px;
+}
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after
+{
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: #787878;
+    position: relative;
+}
+
+#nav-toggle span:before, #nav-toggle span:after
+{
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+#nav-toggle span:before
+{
+    top: -8px;
+    left: 0;
+}
+
+#nav-toggle span:after
+{
+    bottom: -8px;
+    left: 0;
+}
+
+#main-nav
+{
+    position: absolute;
+    top: 44px;
+    right: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+#main-nav.open
+{
+    max-height: 150px;
+}
+
+#main-nav
+{
+    background-color: #fff;
+}
+
+#main-nav a
+{
+    color: #6e7173;
+    padding: 10px 50px;
+    text-align: right;
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid #6e7173;
+}
+
+#banner
+{
+    background-color: #000;
+    text-align: center;
+}
+
+main
+{
+    width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+hr
+{
+    width: 50%;
+}
+
+form
+{
+    width: 100%;
+    display: block;
+}
+
+form div
+{
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 20px;
+}
+
+.wide-60
+{
+    width: 60%;
+}
+
+.wide-40
+{
+    width: 38%;
+}
+
+.wide-100
+{
+    width: 98%;
+}
+
+form label
+{
+    font-size: 16px;
+    display: block;
+    text-align: left;
+}
+
+form input, form select, form textarea
+{
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid #d6d6d6;
+    color: #6e7173;
+}
+
+form select
+{
+    width: 45%;
+}
+
+footer
+{
+    background-color: #353434;
+}
+
+footer div
+{
+    width: 900px;
+    margin: 0 auto;
+}
+
+footer div p, footer div a
+{
+    display: inline-block;
+    width: 49%;
+    color: #fff;
+}
+
+footer div a
+{
+    text-align: right;
+}
+
+@media all and (max-width: 1100px) 
+{
+    #banner img
+    {
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 905px) 
+{
+    header, main, footer div
+    {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+}
+
+@media all and (max-width: 555px) 
+{
+    form div
+    {
+        text-align: center;
+    }
+    form div
+    {
+        width: 100% !important;
+        display: block;
+    }
+    
+    form select
+    {
+        width: 49%;
+    }
+}

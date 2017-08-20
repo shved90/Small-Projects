@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Repositive</title>
+    <link rel="shortcut icon" href="favicon.jpg" />
+    <link rel="apple-touch-icon" href="favicon.jpg" />
+
+    <!-- google search meta tags -->
+    <meta name="description" content="" />
+    <meta name="author" content="Alexander Shved" />
+    <meta name="keywords" content="" />
+
+    <!-- facebook opengraph meta tags -->
+
+    <!-- twitter card meta tags -->
+
+    <link rel="stylesheet" href="style.css?v=1.0" media="all" />
+
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <header>
+        <h3>Repositive</h3>
+    </header>
+
+    <main>
+        <h1>Sign Up</h1>
+        <form>
+            <fieldset>
+                <div>
+                    <input type="text" id="username" value="" required />
+                    <label for="username" data-attribute="You can change your username in your profile after signing up.">username</label>
+                </div>
+                <div>
+                    <input type="email" id="email" value="" required />
+                    <label for="email" data-attribute="You will need to confirm your email later.">email</label>
+                </div>
+                <div>
+                    <input type="password" id="password" value="" pattern=".{8,}" onkeyup="showDetails()" required />
+                    <label for="password" data-attribute="Your password should be at least 8 characters long.">password</label>
+                </div>
+            </fieldset>
+            <div id="password-details">
+                <p>security level: <span class="strength">Weak</span></p>
+                <input type="checkbox" id="checkbox" onclick="togglePassword()" />
+                <label for="checkbox">show password</label>
+            </div>
+            <input type="submit" value="Join Us" />
+            <p>By signing up, you agree to <a href="javascript:void(0)">Terms of Service</a>, <a href="javascript:void(0)">Privacy Policy</a>.</p>
+        </form>
+    </main>
+
+    <script type="text/javascript">
+
+        var password = document.getElementById('password');
+        var checkbox = document.getElementById('checkbox');
+        var details = document.getElementById("password-details");
+        
+        // show password details div if password field has input
+        function showDetails(){
+            if (password.value.length != ""){
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+        // Password characters toggle
+        function togglePassword() {
+            var label = document.getElementById('password').nextSibling; // can't detect label to change the text
+            if(password.type == "password"){
+                password.type = "text";
+                label = '<label for="checkbox">hide password</label>';
+            } else {
+                password.type = "password";
+                label = '<label for="checkbox">show password</label';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

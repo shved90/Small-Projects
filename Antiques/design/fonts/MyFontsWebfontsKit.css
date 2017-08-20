@@ -1,0 +1,68 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3057424, 2015-07-13T05:11:29-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Swiss721BT-Thin by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/swiss-721/thin/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * Licensed pageviews: 10,000
+ * 
+ * Webfont: PalatinoLT-Light by Linotype
+ * URL: http://www.myfonts.com/fonts/linotype/palatino/light/
+ * Copyright: Part of the digitally encoded machine readable outline data for producing the Typefaces provided is copyrighted (c) 1991, 2003 Linotype Library GmbH, www.linotype.com. All rights reserved. This software is the property of Linotype Library GmbH, and may no
+ * Licensed pageviews: 500,000
+ * 
+ * Webfont: PalatinoLT-Roman by Linotype
+ * URL: http://www.myfonts.com/fonts/linotype/palatino/roman/
+ * Copyright: Part of the digitally encoded machine readable outline data for producing the Typefaces provided is copyrighted (c) 1985, 1987, 1989, 1990, 1992, 1997, 1998, 1999, 2003 Linotype Library GmbH, www.linotype.com. All rights reserved. This software is the pro
+ * Licensed pageviews: 250,000
+ * 
+ * Webfont: AvenirLTStd-Heavy by Linotype
+ * URL: http://www.myfonts.com/fonts/linotype/avenir/85-heavy/
+ * Copyright: Copyright &#x00A9; 1989, 1995, 2002 Adobe Systems Incorporated.  All Rights Reserved. &#x00A9; 1981, 1995, 2002 Heidelberger Druckmaschinen AG. All rights reserved.
+ * Licensed pageviews: 500,000
+ * 
+ * Webfont: AvenirLTStd-Medium by Linotype
+ * URL: http://www.myfonts.com/fonts/linotype/avenir/65-medium/
+ * Copyright: Copyright &#x00A9; 1981 - 2006 Linotype GmbH, www.linotype.com. All rights reserved. Copyright &#x00A9; 1989 - 2002 Adobe Systems Incorporated.  All Rights Reserved.
+ * Licensed pageviews: 250,000
+ * 
+ * Webfont: AvenirLTStd-Book by Linotype
+ * URL: http://www.myfonts.com/fonts/linotype/avenir/45-book/
+ * Copyright: Copyright &#x00A9; 1989, 1995, 2002 Adobe Systems Incorporated.  All Rights Reserved. &#x00A9; 1981, 1995, 2002 Heidelberger Druckmaschinen AG. All rights reserved.
+ * Licensed pageviews: 500,000
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=3057424
+ * 
+ * © 2015 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/2ea710");
+
+  
+@font-face {font-family: 'Swiss721BT-Thin';src: url('webfonts/2EA710_0_0.eot');src: url('webfonts/2EA710_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2EA710_0_0.woff2') format('woff2'),url('webfonts/2EA710_0_0.woff') format('woff'),url('webfonts/2EA710_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'PalatinoLT-Light';src: url('webfonts/2EA710_1_0.eot');src: url('webfonts/2EA710_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2EA710_1_0.woff2') format('woff2'),url('webfonts/2EA710_1_0.woff') format('woff'),url('webfonts/2EA710_1_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'PalatinoLT-Roman';src: url('webfonts/2EA710_2_0.eot');src: url('webfonts/2EA710_2_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2EA710_2_0.woff2') format('woff2'),url('webfonts/2EA710_2_0.woff') format('woff'),url('webfonts/2EA710_2_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'AvenirLTStd-Heavy';src: url('webfonts/2EA710_3_0.eot');src: url('webfonts/2EA710_3_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2EA710_3_0.woff2') format('woff2'),url('webfonts/2EA710_3_0.woff') format('woff'),url('webfonts/2EA710_3_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'AvenirLTStd-Medium';src: url('webfonts/2EA710_4_0.eot');src: url('webfonts/2EA710_4_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2EA710_4_0.woff2') format('woff2'),url('webfonts/2EA710_4_0.woff') format('woff'),url('webfonts/2EA710_4_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'AvenirLTStd-Book';src: url('webfonts/2EA710_5_0.eot');src: url('webfonts/2EA710_5_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2EA710_5_0.woff2') format('woff2'),url('webfonts/2EA710_5_0.woff') format('woff'),url('webfonts/2EA710_5_0.ttf') format('truetype');}
+ 

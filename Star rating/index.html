@@ -1,0 +1,105 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Rixxo Star Rating Widget Test</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <!-- containers for the widgets to appear in -->
+
+                <div class="product" itemscope itemtype="http://schema.org/Product">
+                    <div class="col col--1-3">
+                        <div class="product__image">
+                            <img class="image" src="http://via.placeholder.com/200x200" alt="Product Name" itemprop="image" />
+                        </div>
+                    </div>
+                    <div class="col col--2-3">
+                        <h3 class="product__name" itemprop="name">Product Name</h3>
+                        <div class="star-rating-widget"> <!-- this could benefit with expanded functionality for structured data, see here: http://schema.org/Rating -->
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                        </div>
+                        <p class="product__price" itemprop="price">£89.99</p>
+                        <p class="product__description" itemprop="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum at dui id facilisis. Quisque metus sapien, mollis nec vulputate vitae, ornare ac nulla. Nulla id varius mi.</p>
+                    </div>
+                </div>
+
+                <div class="product" itemscope itemtype="http://schema.org/Product">
+                    <div class="col col--1-3">
+                        <div class="product__image">
+                            <img class="image" src="http://via.placeholder.com/200x200" alt="Product Name" itemprop="image" />
+                        </div>
+                    </div>
+                    <div class="col col--2-3">
+                        <h3 class="product__name" itemprop="name">Product Name</h3>
+                        <div class="star-rating-widget" data-rating="8"> <!-- this could benefit with expanded functionality for structured data, see here: http://schema.org/Rating -->
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                        </div>
+                        <p class="product__price" itemprop="price">£39.99</p>
+                        <p class="product__description" itemprop="description">Sed quis enim id nulla dictum venenatis. In bibendum, mi sed ullamcorper iaculis, nunc diam porttitor purus, non aliquam nibh ligula ac leo. Integer in sapien lacus.</p>
+                    </div>
+                </div>
+
+                <div class="product" itemscope itemtype="http://schema.org/Product">
+                    <div class="col col--1-3">
+                        <div class="product__image">
+                            <img class="image" src="http://via.placeholder.com/200x200" alt="Product Name" itemprop="image" />
+                        </div>
+                    </div>
+                    <div class="col col--2-3">
+                        <h3 class="product__name" itemprop="name">Product Name</h3>
+                        <div class="star-rating-widget" data-rating="3"> <!-- this could benefit with expanded functionality for structured data, see here: http://schema.org/Rating -->
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                            <svg role="presentation" class="icon"><use xlink:href="#star"></use></svg>
+                        </div>
+                        <p class="product__price" itemprop="price">£129.99</p>
+                        <p class="product__description" itemprop="description">Duis molestie porttitor ultrices. Donec vel leo ac diam vehicula posuere eu dictum dui. Integer sed efficitur lacus, id pharetra odio. Proin sem velit, sagittis vitae ante eget, gravida bibendum augue.</p>
+                    </div>
+                </div>
+
+                
+            </div>
+        </main>
+
+        <svg class="hidden">
+            <symbol id="star" viewBox="0 0 50 50">
+                <polygon points="25,3.609 31.849,17.484 47.16,19.71 36.08,30.511 38.695,45.761 25,38.56 11.304,45.761 13.92,30.511 2.84,19.71 18.152,17.484 "/>
+            </symbol>
+        </svg>
+
+        <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

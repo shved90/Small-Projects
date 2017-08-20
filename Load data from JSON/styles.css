@@ -1,0 +1,111 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.loadFriends{
+	display: block;
+	background-color: #EE3039;
+	color: #fff;
+	padding: 12px 30px;
+	margin-top: 10px;
+	border: none;
+	border-radius: 30px;
+	font-weight: bold;
+	text-align: center;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	outline: none;
+}
+
+.loadFriends:after{
+	content: "";
+	position: absolute;
+	top: -20px;
+	left: 0px;
+	width: 0%;
+	height: 200%;
+	background-color: rgba(255,255,255,0.4);
+	-webkit-transition: none;
+	transition: none;
+	transform: rotate(15deg);
+}
+
+.loadFriends:hover:after{
+	width: 120%;
+	background-color: rgba(255,255,255,0);
+	-webkit-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+
+.peopleList:after{
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.peopleList__person {
+  float: left;
+  display: inline-block;
+  width: 250px;
+  vertical-align: top;
+  position: relative;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid #c5c5c5;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.peopleList__person:last-of-type{
+	display: none;
+}
+.peopleList__person .person__name {
+  color: #1975BC;
+  margin-top: 0;
+}
+.peopleList__person .person__email {
+  color: #EE3039;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  display: inline-block;
+  padding: 3px;
+  margin-left: -3px;
+}
+.peopleList__person .person__email:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #EE3039;
+  transition: all 0.2s ease-in;
+  z-index: -1;
+}
+.peopleList__person .person__email:hover:before {
+  width: 100%;
+}
+#friendView {
+  background: url(http://www.polecat.com/wp-content/themes/ferret/images/menu-bg.jpg) top center/cover no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+.peopleList__person .person__friendList .friendList__friend {
+  width: 130px;
+  display: inline-block;
+  vertical-align: top;
+}
+.peopleList__person .person__friendList .friendList__friend .friend__avatar {
+  width: 100%;
+  display: block;
+}

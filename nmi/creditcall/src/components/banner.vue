@@ -4,7 +4,7 @@
       <v-flex sm7>
         <h1>Speed, Simplicity, Knowledge, Choice.</h1>
         <p>Embrace the world of in-store, mobile and online with one simple integration with Creditcall Semi-Integrated.</p>
-        <mainBtn text="bob" link="other" color="green" />
+        <mainBtn text="press me" color="green" />
       </v-flex>
     </v-layout>
   </v-container>

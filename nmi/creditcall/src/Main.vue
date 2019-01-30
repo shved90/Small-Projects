@@ -17,7 +17,7 @@ import banner from './components/banner.vue'
 import infoPanel from './components/infoPanel.vue'
 
 export default {
-  name: 'main',
+  name: 'mainPage',
   components: {
     toolbar, banner, infoPanel
   }

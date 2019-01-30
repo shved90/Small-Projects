@@ -4,19 +4,21 @@
       <v-flex sm7>
         <h1>Speed, Simplicity, Knowledge, Choice.</h1>
         <p>Embrace the world of in-store, mobile and online with one simple integration with Creditcall Semi-Integrated.</p>
-        <mainBtn text="press me" color="green" />
       </v-flex>
     </v-layout>
+    <slideDetails/>
+    <slideContact/>
   </v-container>
 </template>
 
 <script>
-import mainBtn from './mainBtn.vue'
+import slideDetails from './slideDetails.vue'
+import slideContact from './slideContact.vue'
 
 export default {
   name: 'banner',
   components: {
-    mainBtn
+    slideDetails, slideContact
   }
 }
 </script>

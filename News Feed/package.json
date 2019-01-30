@@ -1,7 +1,0 @@
-{
-  "name": "news-feed",
-  "version": "1.0.0",
-  "description": "secret escapes task",
-  "main": "index.js",
-  "license": "MIT"
-}

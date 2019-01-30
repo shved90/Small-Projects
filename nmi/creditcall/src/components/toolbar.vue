@@ -1,6 +1,6 @@
 <template>
   <v-toolbar flat fixed class="mainNav">
-    <v-toolbar-title>creditcall</v-toolbar-title>
+    <v-toolbar-title><img src="../assets/logo.png" class="logo" alt="creditcall logo" /></v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items>
       <v-btn flat>Link One</v-btn>
@@ -8,7 +8,7 @@
       <v-btn flat>Link Three</v-btn>
     </v-toolbar-items>
     <v-spacer></v-spacer>
-    <mainBtn text="Sign in" link="other" color="white" outline />
+    <mainBtn text="Sign in" link="http://bfy.tw/Pnr" color="white" outline />
   </v-toolbar>
 </template>
 
@@ -35,6 +35,11 @@ window.onscroll = () => {
 
   .mainNav .v-btn__content{
     color: white;
+  }
+
+  nav .logo{
+    width: 100px;
+    margin-top: 3px;
   }
 
   nav.v-toolbar.scrollActive{

@@ -1,6 +1,6 @@
 <template>
   <v-container grid-list-md class="infoPanel">
-    <v-layout row wrap v-bind:class="{imageRight}">
+    <v-layout row wrap :class="{imageRight}">
       <v-flex sm5>
         <div class="diagram">
         <img class="diagramImage" src="../assets/srsBzns.png" />

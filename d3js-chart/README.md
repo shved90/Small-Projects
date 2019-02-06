@@ -1,0 +1,6 @@
+## Summary
+
+1. Spent roughly 10 hours on this, main time drain was the library I chose to use, D3JS is pretty big and complex, I haven't touched it for a few years and it took a bit of time to get it to work.
+2. Enjoyed untangling the mess of tutorials and code snippets, few of them were compatible and a lot needed tweaking and editing, sifting through documentation to get them to gel. Importing calc function and assembly an array was the most fun in the project.
+3. D3JS follows enter/update/exit pattern, but I only realized that closed to the finish, thus the graph doesnt update correctly. It does append 'g' on dataset change, but the svg itself isnt reacting, need a few more hours to wrap it up. Same applies to value inputs - dataset does change, but graph doesnt reflect that. :shipit:
+4. It needs some styling, make hover values more visible, remove dots and apply hover values to the line itself. I wanted to do years starting from todays date, and adding years from input, and splitting the number using D3JS functions to see months/years, but left it for later cleanup. Same for £ axis. And obvs finishing the core fuctionality of this.

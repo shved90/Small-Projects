@@ -2,9 +2,37 @@
 <meta charset="utf-8">
 
 <style type="text/css">
-	/* 13. Basic Styling with CSS */
+	.wrapper {
+		text-align: center;
+	}
 
-	/* Style the lines by removing the fill and applying a stroke */
+	.wrapper form,
+	.wrapper .btn-wrapper {
+		width: 250px;
+		display: inline-block;
+	}
+
+	.wrapper button {
+		display: inline-block;
+		width: 150px;
+		padding: 10px;
+		box-sizing: border-box;
+		background-color: #44e450;
+		border: none;
+		border-radius: 4px;
+		margin-top: 5px;
+	}
+
+	.wrapper button:hover {
+		background-color: #31d431;
+	}
+
+	#chart{
+		max-width: 1200px;
+		text-align: center;
+		margin: 0 auto
+	}
+
 	.line {
 		fill: none;
 		stroke: #ffab00;
@@ -16,7 +44,6 @@
 		pointer-events: all;
 	}
 
-	/* Style the dots by assigning a fill and stroke */
 	.dot {
 		fill: #ffab00;
 		stroke: #fff;
@@ -29,22 +56,57 @@
 </style>
 
 <body>
-	<button onclick="riskSelector('high')">highRisk</button>
-	<button onclick="riskSelector('medium')">mediumRisk</button>
-	<button onclick="riskSelector('low')">lowRisk</button>
-	<div id="chart"></div>
+	<div class="wrapper">
+		<!-- updates dataset, but d3js doesnt react to it fully -->
+		<div class="btn-wrapper">
+			<button onclick="riskSelector('high')">highRisk</button>
+			<button onclick="riskSelector('medium')">mediumRisk</button>
+			<button onclick="riskSelector('low')">lowRisk</button>
+		</div>
+		<!-- needs validation -->
+		<form id="details" action='#'>
+			<fieldset>
+				<label for='sum'>Lump sum</label>
+				<input type="number" id="sum" />
+			</fieldset>
+			<fieldset>
+				<label for='monthly'>Monthly Amount</label>
+				<input type="number" id="monthly" />
+			</fieldset>
+			<fieldset>
+				<label for='period'>Holding period</label>
+				<input type="number" id="period" />
+			</fieldset>
+			<button type="submit" onclick="calcValues()" href='#'>submit</button>
+		</form>
+		<div id="chart"></div>
+	</div>
 </body>
 
-<!-- Load in the d3 library -->
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script type="text/javascript" src="CalculationEngine.js"></script>
 
 <script>
 
 	let generator = new Calculation.CalculationEngine(3000, 100, 10);
+
+	function calcValues() {
+		document.getElementById('details').submit(function (e) {
+			e.preventDefault()
+		})
+		generator = new Calculation.CalculationEngine(
+			document.getElementById('sum').value,
+			document.getElementById('monthly').value,
+			document.getElementById('period').value
+		);
+		console.log(generator)
+	}
+
+
 	let result = generator.mediumRiskResults();
 	let time = generator.timescaleInYears * 12
 
+	//changing risk level, dataset does actually change, d3js doesnt react to it though
 	function riskSelector(level) {
 		switch (level) {
 			case 'high':
@@ -64,8 +126,7 @@
 		}
 	}
 
-	console.log(result)
-
+	// generating data
 	const data = Object.entries(result).map(([name, values]) => {
 		values = values.map((amount, i) => {
 			return {
@@ -76,6 +137,7 @@
 		return { name, values }
 	})
 
+	//basic style presets
 	const width = 800;
 	const height = 500;
 	const margin = 150;
@@ -92,7 +154,7 @@
 	const circleRadius = 3;
 	const circleRadiusHover = 6;
 
-	/* Scale */
+	// building X and Y scale values
 	const xScale = d3.scaleTime()
 		.domain(d3.extent(data[0].values, d => d.time))
 		.range([0, width - margin]);
@@ -103,33 +165,34 @@
 
 	const color = d3.scaleOrdinal(d3.schemeCategory10);
 
-	/* Add SVG */
-	const svg = d3.select("#chart").append("svg")
+	// putting together enter/update/exit cycle so d3js can react to changing dataset.
+	// needs work, svg generation is done wrong, needs splitting further
+	const svgData = d3.select("#chart").data(data)
+	svgData.exit().remove()
+	const svg = svgData.append("svg")
 		.attr("width", (width + margin) + "px")
 		.attr("height", (height + margin) + "px")
+		.call(responsivefy)
 		.append('g')
 		.attr("transform", `translate(${margin}, ${margin})`);
 
-
-	/* Add line into SVG */
 	const line = d3.line()
 		.x(d => xScale(d.time))
 		.y(d => yScale(d.amount));
 
-	const lines = svg.append('g')
-		.attr('class', 'lines');
-
-	const lineGroup = lines.selectAll('.line-group')
+	const lineGroup = svg.append('g')
+		.attr('class', 'lines').selectAll('.line-group')
 		.data(data)
-	const circleGroup = lines.selectAll("circle-group")
+	const circleGroup = svg.append('g')
+		.attr('class', 'lines').selectAll("circle-group")
 		.data(data)
 	const dotGroup = circleGroup.selectAll("circle")
 		.data(d => d.values)
 
 	function updateData() {
 		lineGroup.exit().remove(),
-		circleGroup.exit().remove(),
-		dotGroup.exit().remove()
+			circleGroup.exit().remove(),
+			dotGroup.exit().remove()
 		return {
 			lineGroup: lineGroup.enter().append('g'),
 			circleGroup: circleGroup.enter().append("g"),
@@ -137,6 +200,7 @@
 		}
 	}
 
+	// putting lines and dots in the right places
 	updateData().lineGroup
 		.attr('class', 'line-group')
 		.on("mouseover", function (d, i) {
@@ -176,8 +240,6 @@
 				.style("cursor", "none");
 		});
 
-
-	/* Add circles in the line */
 	updateData().circleGroup
 		.style("fill", (d, i) => color(i))
 		.selectAll("circle")
@@ -218,10 +280,9 @@
 				.attr("r", circleRadius);
 		});
 
-
-	/* Add Axis into SVG */
-	let xAxis = d3.axisBottom(xScale).ticks(5);
-	let yAxis = d3.axisLeft(yScale).ticks(5);
+	//populating X and Y axis
+	let xAxis = d3.axisBottom(xScale).ticks(15);
+	let yAxis = d3.axisLeft(yScale).ticks(15);
 
 	svg.append("g")
 		.attr("class", "x axis")
@@ -237,8 +298,22 @@
 		.attr("fill", "#000")
 		.text("Total values");
 
+	function responsivefy(svg) {
+		var container = d3.select(svg.node().parentNode),
+			width = parseInt(svg.style("width")),
+			height = parseInt(svg.style("height")),
+			aspect = width / height;
+		svg.attr("viewBox", "0 0 " + width + " " + height)
+			.attr("perserveAspectRatio", "xMinYMid")
+			.call(resize);
+		d3.select(window).on("resize." + container.attr("id"), resize);
+		function resize() {
+			var targetWidth = parseInt(container.style("width"));
+			svg.attr("width", targetWidth);
+			svg.attr("height", Math.round(targetWidth / aspect));
+		}
+	}
 
-	updateData();
 </script>
 
 

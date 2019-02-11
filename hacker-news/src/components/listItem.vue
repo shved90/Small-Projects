@@ -24,7 +24,7 @@ export default {
     return {
       items: 15,
       storyType: "beststories",
-      stories: [],
+      stories: []
     };
   },
   methods: {
@@ -54,7 +54,7 @@ export default {
         });
       })
       .catch(err => {
-        this.err = "didnt load";
+        console.log(err);
         this.updateLoader();
       })
       .finally(this.updateLoader());

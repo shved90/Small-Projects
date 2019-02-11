@@ -8,7 +8,6 @@ it("check if hackerData props are passed correctly", () => {
       storyType: "beststories",
       stories: []
     }
-  })
-  console.log(wrapper.vm)
-  expect(wrapper.find(hackerData).exists()).toBe(true)
+  });
+  expect(wrapper.find(hackerData).exists()).toBe(true);
 });

@@ -1,4 +1,3 @@
-
 <script>
 // massive WIP
 import axios from "axios";
@@ -25,7 +24,9 @@ export default {
   methods: {
     async pullData() {
       await axios
-        .get("https://hacker-news.firebaseio.com/v0/" + this.storyType + ".json")
+        .get(
+          "https://hacker-news.firebaseio.com/v0/" + this.storyType + ".json"
+        )
         .then(result => {
           this.results = result.data.slice(0, this.items);
           this.results.forEach(id => {
@@ -37,7 +38,7 @@ export default {
           });
         })
         .catch(err => {
-          this.err = "didnt load";
+          console.log(err);
           this.updateLoader();
         })
         .finally(this.updateLoader());

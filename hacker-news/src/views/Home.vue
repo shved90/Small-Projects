@@ -1,23 +1,41 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld :msg="stuff" />
+    <p class="lolz">pls dont touch 5th column 😹 its on fire 🔥</p>
+    <spinner v-if="loader" />
+    <listItem v-on:loadingState="updateLoader($event)" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import listItem from "@/components/listItem.vue";
+import spinner from "@/components/spinner.vue";
 
 export default {
   name: "home",
   components: {
-    HelloWorld
+    listItem,
+    spinner
   },
   data() {
     return {
-      stuff: "message"
+      loader: true
     };
+  },
+  methods: {
+    updateLoader(updated) {
+      this.loader = updated;
+    }
   }
 };
 </script>
+
+<style>
+.home {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.lolz {
+  text-align: right;
+}
+</style>

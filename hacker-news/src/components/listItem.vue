@@ -23,9 +23,8 @@ export default {
   data() {
     return {
       items: 15,
-      itemType: "beststories",
+      storyType: "beststories",
       stories: [],
-      err: ""
     };
   },
   methods: {
@@ -43,20 +42,19 @@ export default {
   },
   created() {
     axios
-      .get("https://hacker-news.firebaseio.com/v0/" + this.itemType + ".json")
+      .get("https://hacker-news.firebaseio.com/v0/" + this.storyType + ".json")
       .then(result => {
         this.results = result.data.slice(0, this.items);
         this.results.forEach(id => {
           axios
             .get("https://hacker-news.firebaseio.com/v0/item/" + id + ".json")
             .then(result => {
-              console.log(result.data);
               this.stories.push(result.data);
             });
         });
       })
       .catch(err => {
-        this.err = err;
+        this.err = "didnt load";
         this.updateLoader();
       })
       .finally(this.updateLoader());
@@ -80,7 +78,7 @@ export default {
   padding: 10px;
   overflow: hidden;
   font-family: Arial, Helvetica, sans-serif;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 
   .title,
   .type {
@@ -103,6 +101,7 @@ export default {
 
   &.open {
     background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease-in-out;
     * {
       overflow: visible;
       white-space: normal;
@@ -135,7 +134,6 @@ export default {
           grid-row-start: 4;
           grid-row-end: 6;
         }
-        transition: all 0.3s ease;
       }
     }
   }

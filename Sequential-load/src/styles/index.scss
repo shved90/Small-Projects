@@ -1,0 +1,114 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    font-weight: lighter;
+}
+
+a {
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+    font-weight: 300;
+    background-color: #1dce94;
+    border: none;
+    border-radius: 500px;
+    color: white;
+    padding: 0.5rem 1rem;
+    margin: 20px 0;
+    transition: all 0.3s;
+
+    &:hover {
+        color: #1dce94;
+        background-color: white;
+    }
+
+    &:active {
+        background-color: #cbcbcb;
+    }
+}
+
+.splash {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.splash__content {
+    position: relative;
+    top: 5%;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    min-width: 320px;
+    width: 100%;
+    max-width: 680px;
+}
+
+.splash-overview {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.1), 0 10px 25px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 4rem;
+    width: 100%;
+}
+
+.splash-overview__details {
+    background-color: #323bff;
+    color: white;
+    padding: 2rem;
+}
+
+.splash-overview-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 1rem;
+
+    &__list{
+        padding: 0;
+        margin: 0;
+        width: 100%
+    }
+}
+
+.list-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    background: #4242f7;
+    transition: all .1s ease;
+    margin: 5px 0;
+
+    &:hover{
+        background: #6060ff;
+    }
+    img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .list-content{
+        width: 90%;
+        text-align: right;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
